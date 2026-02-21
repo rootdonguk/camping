@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1771664112575,
+      "tag": "0000_curly_pepper_potts",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1771664224507,
+      "tag": "0001_workable_slipstream",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1771666720793,
+      "tag": "0002_eminent_rocket_raccoon",
+      "breakpoints": true
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE `site_settings` (\n\t`id` int AUTO_INCREMENT NOT NULL,\n\t`key` varchar(128) NOT NULL,\n\t`value` text,\n\t`description` text,\n\t`createdAt` timestamp NOT NULL DEFAULT (now()),\n\t`updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,\n\tCONSTRAINT `site_settings_id` PRIMARY KEY(`id`),\n\tCONSTRAINT `site_settings_key_unique` UNIQUE(`key`)\n);\nALTER TABLE `reservations` ADD `payment_method` enum('stripe','naver_pay','kakao_pay','toss') DEFAULT 'stripe';\nALTER TABLE `reservations` ADD `naverpay_order_id` varchar(256);\nALTER TABLE `reservations` ADD `kakaopay_tid` varchar(256);\nALTER TABLE `reservations` ADD `toss_order_id` varchar(256);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2LAWyGrRdgqZ8iD.root --database f38Hp76BikHAN4xBHrqw5P --execute CREATE TABLE `site_settings` (\n\t`id` int AUTO_INCREMENT NOT NULL,\n\t`key` varchar(128) NOT NULL,\n\t`value` text,\n\t`description` text,\n\t`createdAt` timestamp NOT NULL DEFAULT (now()),\n\t`updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,\n\tCONSTRAINT `site_settings_id` PRIMARY KEY(`id`),\n\tCONSTRAINT `site_settings_key_unique` UNIQUE(`key`)\n);\nALTER TABLE `reservations` ADD `payment_method` enum('stripe','naver_pay','kakao_pay','toss') DEFAULT 'stripe';\nALTER TABLE `reservations` ADD `naverpay_order_id` varchar(256);\nALTER TABLE `reservations` ADD `kakaopay_tid` varchar(256);\nALTER TABLE `reservations` ADD `toss_order_id` varchar(256);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 3091
+}
