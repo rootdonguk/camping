@@ -2,22 +2,14 @@
   "version": 2,
   "buildCommand": "pnpm build",
   "outputDirectory": "dist",
-  "functions": {
-    "dist/index.js": {
-      "memory": 1024,
-      "maxDuration": 60
-    }
-  },
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/(.*)",
-      "dest": "dist/index.js",
-      "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"]
+      "source": "/api/(.*)",
+      "destination": "dist/index.js"
     },
     {
-      "src": "/(.*)",
-      "dest": "dist/index.js",
-      "methods": ["GET"]
+      "source": "/(.*)",
+      "destination": "dist/index.js"
     }
   ]
 }
