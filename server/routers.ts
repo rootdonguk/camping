@@ -17,7 +17,7 @@ import {
 } from "./db";
 import Stripe from "stripe";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", { apiVersion: "2026-01-28.clover" });
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "sk_test_placeholder", { apiVersion: "2026-01-28.clover" });
 
 const adminProcedure = protectedProcedure.use(({ ctx, next }) => {
   if (ctx.user.role !== "admin") throw new TRPCError({ code: "FORBIDDEN", message: "Admin access required" });
@@ -173,6 +173,13 @@ export const appRouter = router({
       adminReply: z.string().optional(),
     })).mutation(async ({ input }) => {
       await updateInquiryStatus(input.id, input.status, input.adminReply);
+      return { success: true };
+    }),
+    reply: adminProcedure.input(z.object({
+      id: z.number(),
+      adminReply: z.string().min(1),
+    })).mutation(async ({ input }) => {
+      await updateInquiryStatus(input.id, "replied", input.adminReply);
       return { success: true };
     }),
   }),

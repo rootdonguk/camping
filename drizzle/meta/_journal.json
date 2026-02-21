@@ -22,6 +22,13 @@
       "when": 1771666720793,
       "tag": "0002_eminent_rocket_raccoon",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1771669678824,
+      "tag": "0003_jazzy_jetstream",
+      "breakpoints": true
     }
   ]
 }
