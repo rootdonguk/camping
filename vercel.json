@@ -5,11 +5,11 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "dist/index.js"
+      "destination": "/api/index"
     },
     {
       "source": "/(.*)",
-      "destination": "dist/index.js"
+      "destination": "/api/index"
     }
   ]
 }
